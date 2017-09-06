@@ -1,8 +1,11 @@
-package me.ratna.springboot17;
+package me.ratna.springboot17.models;
 
+
+import me.ratna.springboot17.models.Role;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 @Table(name="USER_DATA")
@@ -93,5 +96,9 @@ public class User {
     @JoinTable(joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+    public User(){
+        setRoles(new HashSet<Role>());
+    }
+
 
 }

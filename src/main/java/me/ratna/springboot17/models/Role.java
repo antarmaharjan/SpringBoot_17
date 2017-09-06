@@ -1,7 +1,10 @@
-package me.ratna.springboot17;
+package me.ratna.springboot17.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+
 
 @Entity
 public class Role {
@@ -12,6 +15,14 @@ public class Role {
     private String role;
     @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
     private Collection<User> users;
+//    public Role(){
+//        setUser(new HashSet<User>());
+//    }
+
+    //public Role()
+    {
+        this.users = new ArrayList<User>();
+    }
 
     public long getId() {
         return id;
@@ -36,4 +47,13 @@ public class Role {
     public void setUsers(Collection<User> users) {
         this.users = users;
     }
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", role='" + role + '\'' +
+                ", user=" + users +
+                '}';
+    }
+
 }

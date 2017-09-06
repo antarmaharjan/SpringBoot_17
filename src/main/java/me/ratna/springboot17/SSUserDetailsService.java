@@ -1,5 +1,8 @@
 package me.ratna.springboot17;
 
+import me.ratna.springboot17.models.Role;
+import me.ratna.springboot17.models.User;
+import me.ratna.springboot17.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
